@@ -39,6 +39,21 @@ En el firewall (`./lab.sh fw`): `tcpdump -ni wan host 198.51.100.62 -c 6`. Mient
 (`./lab.sh comercial`) hace `curl http://172.16.10.20:8080`. Pega lo que sale en el firewall:
 
 ```text
+
+root@fw:/# tcpdump -ni wan host 198.51.100.62 -c 6
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on wan, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+18:50:33.744163 IP 198.51.100.62.40917 > 198.51.100.254.51820: UDP, length 32
+18:50:58.829291 IP 198.51.100.62.40917 > 198.51.100.254.51820: UDP, length 32
+18:50:58.829676 IP 198.51.100.62.40917 > 198.51.100.254.51820: UDP, length 148
+18:50:58.830470 IP 198.51.100.254.51820 > 198.51.100.62.40917: UDP, length 92
+18:50:58.831042 IP 198.51.100.62.40917 > 198.51.100.254.51820: UDP, length 32
+18:51:03.949178 ARP, Request who-has 198.51.100.62 tell 198.51.100.254, length 28
+6 packets captured
+9 packets received by filter
+0 packets dropped by kernel
+
+
 (pega aquí la salida de tcpdump)
 ```
 
